@@ -40,7 +40,7 @@ grep "cd /opt/gopath/src/github.com/openebs/mayaserver" /home/vagrant/.profile |
 echo "Look into the GNUmakefile & invoke init to get started with development"
 SCRIPT
 
-required_plugins = %w(vagrant-cachier)
+required_plugins = %w(vagrant-cachier vagrant-vbguest)
 
 required_plugins.each do |plugin|
   need_restart = false
