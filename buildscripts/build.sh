@@ -30,6 +30,10 @@ rm -f bin/*
 rm -rf pkg/*
 mkdir -p bin/
 
+# Fetch the tags before using git rev-list --tags
+git fetch --tags >/dev/null 2>&1
+GIT_TAG="$(git describe --tags $(git rev-list --tags --max-count=1))"
+
 if [ -z "${GIT_TAG}" ]; 
 then
     GIT_TAG="0.0.1"
